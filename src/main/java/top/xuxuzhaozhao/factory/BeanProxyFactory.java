@@ -30,7 +30,7 @@ public class BeanProxyFactory {
      */
     @Bean(name = "proxyAccountService")
     public IAccountService getAccountService() {
-        Proxy.newProxyInstance(accountService.getClass().getClassLoader(),
+        return (IAccountService) Proxy.newProxyInstance(accountService.getClass().getClassLoader(),
                 accountService.getClass().getInterfaces(),
                 new InvocationHandler() {
                     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
@@ -50,6 +50,5 @@ public class BeanProxyFactory {
                         }
                     }
                 });
-        return accountService;
     }
 }

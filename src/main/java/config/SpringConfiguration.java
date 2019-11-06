@@ -31,6 +31,7 @@ import utils.TransactionManager;
 @ComponentScan(basePackages = {"top.xuxuzhaozhao", "utils"})
 @Import({JdbcConfig.class})
 @PropertySource("classpath:jdbcConfig.properties")
+@EnableAspectJAutoProxy // 开启spring对TransactionManager注解的支持
 public class SpringConfiguration {
 
 //    /**

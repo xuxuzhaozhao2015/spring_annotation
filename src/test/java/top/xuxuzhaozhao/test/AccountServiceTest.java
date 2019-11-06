@@ -1,19 +1,12 @@
 package top.xuxuzhaozhao.test;
 
 import config.SpringConfiguration;
-import org.apache.commons.dbutils.QueryRunner;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import top.xuxuzhaozhao.domain.Account;
 import top.xuxuzhaozhao.service.IAccountService;
-import utils.ConnectionUtils;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -31,7 +24,7 @@ import java.util.List;
         classes = SpringConfiguration.class
 )
 public class AccountServiceTest {
-    @Resource(name = "proxyAccountService")
+    @Resource(name = "accountService")
     IAccountService accountService;
     //ApplicationContext ac;
 
